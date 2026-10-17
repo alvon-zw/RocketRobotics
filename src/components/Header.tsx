@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "./CartProvider";
+import Logo from "./Logo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -24,25 +24,18 @@ export default function Header() {
 
   const linkClass = (href: string) =>
     isActive(href)
-      ? "text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1"
-      : "text-gray-700 hover:text-indigo-600 transition";
+      ? "text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1 transition-colors"
+      : "text-gray-700 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-300 pb-1 transition-all duration-200";
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-white shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4">
+    <header className="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md shadow-sm pt-[env(safe-area-inset-top)]">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo.jpg"
-              alt="RocketsRobotics"
-              width={160}
-              height={80}
-              priority
-              className="h-[75px] w-auto md:h-20"
-            />
+            <Logo />
           </Link>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-8">
             {links.map((l) => (
               <Link key={l.href} href={l.href} className={linkClass(l.href)}>
                 {l.label}
@@ -54,12 +47,12 @@ export default function Header() {
             <Link
               href="/cart"
               aria-label={`Cart, ${count} items`}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition relative"
+              className="p-2 rounded-full bg-gray-100 hover:bg-indigo-100 hover:scale-110 active:scale-95 transition duration-200 relative"
             >
               <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
-              <span className="absolute -top-1 -right-1 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              <span key={count} className="animate-pop absolute -top-1 -right-1 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {count}
               </span>
             </Link>
@@ -68,7 +61,7 @@ export default function Header() {
               aria-label="Toggle menu"
               aria-expanded={open}
               onClick={() => setOpen((o) => !o)}
-              className="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
+              className="lg:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 active:scale-95 transition"
             >
               <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -78,7 +71,7 @@ export default function Header() {
         </div>
 
         {open && (
-          <div className="md:hidden flex flex-col gap-3 pb-4 border-t border-gray-200 pt-4">
+          <div className="animate-fade-up lg:hidden flex flex-col gap-3 pb-4 max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-gray-200 pt-4">
             {links.map((l) => (
               <Link
                 key={l.href}

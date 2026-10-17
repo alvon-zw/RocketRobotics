@@ -25,7 +25,7 @@ async function FeaturedKits() {
 export default function Home() {
   return (
     <>
-      <section className="pt-36 pb-24 px-4 bg-linear-to-r from-indigo-600 to-purple-600 text-white">
+      <section className="pt-36 pb-24 px-4 hero-bg text-white">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold">Build. Code. Launch.</h1>
           <p className="text-xl text-indigo-100 mt-6 max-w-2xl mx-auto">
@@ -34,13 +34,13 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/shop"
-              className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg"
+              className="btn-lift bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 shadow-lg"
             >
               Shop Kits
             </Link>
             <Link
               href="/contact"
-              className="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-indigo-700 transition"
+              className="btn-lift border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10"
             >
               Contact Us
             </Link>
@@ -57,7 +57,7 @@ export default function Home() {
             <FeaturedKits />
           </Suspense>
           <div className="text-center mt-10">
-            <Link href="/shop" className="text-indigo-600 font-semibold hover:text-indigo-700">
+            <Link href="/shop" className="inline-block text-indigo-600 font-semibold hover:text-indigo-700 hover:translate-x-1 transition duration-200">
               View all kits →
             </Link>
           </div>

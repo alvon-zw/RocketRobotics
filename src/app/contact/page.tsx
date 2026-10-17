@@ -21,7 +21,7 @@ const faqs = [
 export default function ContactPage() {
   return (
     <>
-      <section className="pt-32 pb-20 px-4 bg-linear-to-r from-indigo-600 to-purple-600">
+      <section className="pt-32 pb-20 px-4 hero-bg">
         <div className="max-w-7xl mx-auto text-white">
           <div className="flex items-center space-x-2 text-sm mb-4">
             <Link href="/" className="hover:text-indigo-200 transition">Home</Link>
@@ -44,16 +44,16 @@ export default function ContactPage() {
             <ContactForm />
           </div>
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover">
               <h3 className="text-xl font-bold mb-2">📍 Visit Us</h3>
               <p className="text-gray-600">123 Harare Drive, Harare, Zimbabwe</p>
             </div>
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover">
               <h3 className="text-xl font-bold mb-2">✉️ Email Us</h3>
               <p className="text-gray-600">hello@rocketsrobotics.com</p>
               <p className="text-gray-600">support@rocketsrobotics.com</p>
             </div>
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover">
               <h3 className="text-xl font-bold mb-2">📞 Call Us</h3>
               <p className="text-gray-600">+263 773 245 372</p>
               <p className="text-gray-600">Mon-Fri, 8am-4pm CAT</p>
@@ -67,7 +67,7 @@ export default function ContactPage() {
           <h2 className="text-4xl font-bold text-center">Frequently Asked Questions</h2>
           <div className="space-y-4 mt-12">
             {faqs.map((f) => (
-              <div key={f.q} className="bg-white rounded-xl p-6">
+              <div key={f.q} className="bg-white rounded-xl p-6 card-hover">
                 <h3 className="font-bold text-lg mb-2">{f.q}</h3>
                 <p className="text-gray-600">{f.a}</p>
               </div>

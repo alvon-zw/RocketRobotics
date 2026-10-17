@@ -29,7 +29,7 @@ async function TestimonialList() {
   return (
     <div className="grid md:grid-cols-2 gap-8">
       {(data ?? []).map((t) => (
-        <figure key={t.id} className="bg-white rounded-2xl shadow-xl p-8">
+        <figure key={t.id} className="bg-white rounded-2xl shadow-xl p-8 card-hover">
           <div className="text-yellow-400 mb-4" aria-label={`${t.rating ?? 5} out of 5 stars`}>
             {"★".repeat(t.rating ?? 5)}
           </div>
@@ -58,7 +58,7 @@ async function TestimonialList() {
 export default function TestimonialsPage() {
   return (
     <>
-      <section className="pt-32 pb-20 px-4 bg-linear-to-r from-indigo-600 to-purple-600">
+      <section className="pt-32 pb-20 px-4 hero-bg">
         <div className="max-w-7xl mx-auto text-white">
           <div className="flex items-center space-x-2 text-sm mb-4">
             <Link href="/" className="hover:text-indigo-200 transition">Home</Link>

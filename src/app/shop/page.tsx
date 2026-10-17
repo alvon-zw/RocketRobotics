@@ -48,7 +48,7 @@ export default function ShopPage({
 }) {
   return (
     <>
-      <section className="pt-32 pb-20 px-4 bg-linear-to-r from-indigo-600 to-purple-600">
+      <section className="pt-32 pb-20 px-4 hero-bg">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center space-x-2 text-sm mb-4 text-white">
             <Link href="/" className="hover:text-indigo-200 transition">Home</Link>
@@ -56,7 +56,7 @@ export default function ShopPage({
             <span className="text-indigo-200">Shop</span>
           </div>
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white break-words">
               Robotics Kits &amp; Components
             </h1>
             <p className="text-xl text-indigo-100 mt-4">
@@ -121,7 +121,7 @@ async function ShopResults({
                 <legend className="font-semibold text-gray-900 mb-3">Skill Level</legend>
                 <div className="space-y-2">
                   {SKILL_LEVELS.map((s) => (
-                    <label key={s} className="flex items-center space-x-2">
+                    <label key={s} className="flex items-center space-x-2 cursor-pointer transition hover:text-indigo-600">
                       <input
                         type="checkbox"
                         name="skill"
@@ -139,7 +139,7 @@ async function ShopResults({
                 <legend className="font-semibold text-gray-900 mb-3">Price Range</legend>
                 <div className="space-y-2">
                   {PRICE_RANGES.map((p) => (
-                    <label key={p.value} className="flex items-center space-x-2">
+                    <label key={p.value} className="flex items-center space-x-2 cursor-pointer transition hover:text-indigo-600">
                       <input
                         type="radio"
                         name="price"
@@ -157,7 +157,7 @@ async function ShopResults({
                 <legend className="font-semibold text-gray-900 mb-3">Kit Type</legend>
                 <div className="space-y-2">
                   {KIT_TYPES.map((k) => (
-                    <label key={k} className="flex items-center space-x-2">
+                    <label key={k} className="flex items-center space-x-2 cursor-pointer transition hover:text-indigo-600">
                       <input
                         type="checkbox"
                         name="kit"
@@ -173,7 +173,7 @@ async function ShopResults({
 
               <button
                 type="submit"
-                className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+                className="btn-lift w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700"
               >
                 Apply Filters
               </button>
@@ -197,7 +197,7 @@ async function ShopResults({
                 <select
                   name="sort"
                   defaultValue={sort}
-                  className="border border-gray-200 rounded-lg px-3 py-2"
+                  className="border border-gray-200 rounded-lg px-3 py-2 transition hover:border-indigo-400 focus:border-indigo-500"
                 >
                   {SORTS.map((s) => (
                     <option key={s.value} value={s.value}>
@@ -234,7 +234,7 @@ async function ShopResults({
             <div className="mt-10 text-center">
               <Link
                 href="/contact"
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition hover:underline"
+                className="btn-lift inline-block px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 hover:underline"
               >
                 Looking for something else?
               </Link>

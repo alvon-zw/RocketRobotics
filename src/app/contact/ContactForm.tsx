@@ -6,7 +6,7 @@ import { sendContactMessage, type ContactState } from "./actions";
 const initial: ContactState = { status: "idle" };
 
 const inputClass =
-  "w-full px-4 py-3 border rounded-xl focus:outline-none focus:border-indigo-500";
+  "w-full px-4 py-3 border rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition";
 
 export default function ContactForm() {
   const [state, action, pending] = useActionState(sendContactMessage, initial);
@@ -46,7 +46,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="w-full bg-linear-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition disabled:opacity-60"
+        className="btn-lift w-full bg-linear-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl font-semibold disabled:opacity-60"
       >
         {pending ? "Sending…" : "Send Message"}
       </button>

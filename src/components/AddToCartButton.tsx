@@ -16,7 +16,7 @@ export default function AddToCartButton({ product }: { product: Product }) {
         setAdded(true);
         setTimeout(() => setAdded(false), 1500);
       }}
-      className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+      className={`btn-lift px-4 py-2 rounded-lg text-white ${added ? "bg-green-600" : "bg-indigo-600 hover:bg-indigo-700"}`}
     >
       {added ? "Added ✓" : "Add to Cart"}
     </button>

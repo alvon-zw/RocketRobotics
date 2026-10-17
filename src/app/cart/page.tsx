@@ -12,7 +12,7 @@ export default function CartPage() {
 
   return (
     <>
-      <section className="pt-32 pb-20 px-4 bg-linear-to-r from-indigo-600 to-purple-600">
+      <section className="pt-32 pb-20 px-4 hero-bg">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center space-x-2 text-sm mb-4 text-white">
             <Link href="/" className="hover:text-indigo-200 transition">Home</Link>
@@ -37,7 +37,7 @@ export default function CartPage() {
               </p>
               <Link
                 href="/shop"
-                className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition"
+                className="btn-lift inline-flex items-center gap-2 bg-linear-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold"
               >
                 Browse Our Kits
               </Link>
@@ -46,7 +46,7 @@ export default function CartPage() {
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="lg:w-2/3 bg-white rounded-2xl shadow-lg overflow-hidden self-start w-full">
                 <div className="overflow-x-auto">
-                  <table className="w-full">
+                  <table className="w-full min-w-[34rem]">
                     <thead className="bg-gray-50 border-b">
                       <tr>
                         <th className="text-left py-4 px-6 font-semibold text-gray-600">Product</th>
@@ -60,7 +60,7 @@ export default function CartPage() {
                     </thead>
                     <tbody>
                       {items.map((item) => (
-                        <tr key={item.id} className="border-b hover:bg-gray-50">
+                        <tr key={item.id} className="border-b hover:bg-indigo-50/50 transition-colors">
                           <td className="py-4 px-6">
                             <p className="font-semibold">{item.name}</p>
                             <p className="text-xs text-indigo-600">Level: {item.skill_level}</p>
@@ -76,7 +76,7 @@ export default function CartPage() {
                                 const n = parseInt(e.target.value, 10);
                                 setQuantity(item.id, Number.isNaN(n) ? 1 : n);
                               }}
-                              className="w-20 border rounded-lg px-2 py-1 text-center"
+                              className="w-20 border rounded-lg px-2 py-1 text-center transition focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 focus:outline-none"
                             />
                           </td>
                           <td className="py-4 px-6 font-semibold">
@@ -87,7 +87,7 @@ export default function CartPage() {
                               type="button"
                               onClick={() => remove(item.id)}
                               aria-label={`Remove ${item.name}`}
-                              className="text-red-500 hover:text-red-700"
+                              className="text-red-500 hover:text-red-700 hover:scale-125 active:scale-95 transition"
                             >
                               🗑️
                             </button>

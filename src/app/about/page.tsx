@@ -34,7 +34,7 @@ const team = [
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-32 pb-20 px-4 bg-linear-to-r from-indigo-600 to-purple-600">
+      <section className="pt-32 pb-20 px-4 hero-bg">
         <div className="max-w-7xl mx-auto text-white">
           <div className="flex items-center space-x-2 text-sm mb-4">
             <Link href="/" className="hover:text-indigo-200 transition">Home</Link>
@@ -99,7 +99,7 @@ export default function AboutPage() {
           <p className="text-center text-gray-600 mb-12">Passionate administrators and educators.</p>
           <div className="grid md:grid-cols-3 gap-8">
             {team.map((m) => (
-              <div key={m.name} className="bg-white rounded-2xl shadow-xl overflow-hidden text-center">
+              <div key={m.name} className="bg-white rounded-2xl shadow-xl overflow-hidden text-center card-hover">
                 <Image
                   src={m.image}
                   alt={m.name}
